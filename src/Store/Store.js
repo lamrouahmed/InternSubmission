@@ -27,14 +27,26 @@ function Store() {
   
   
   const handlePagination = (selectedPage = 1, data = products) => { 
-    setCurrentPage(selectedPage)
-    const start = currentPage * LIMIT - LIMIT
+    const start = selectedPage * LIMIT - LIMIT
     const end = start + LIMIT
+    setCurrentPage(selectedPage);
     setDisplayedProducts(data.slice(start, end))
+  }
+
+  const sortProducts = (type) => {
+    setProducts(SORTS[type](products))
+    handlePagination(currentPage, products)
+  }
+
+
+  const SORTS = {
+    price: (products) => products.sort((a, b) => b.price - a.price),
+    rating: (products) => products.sort((a, b) => b.rating.rate - a.rating.rate),
   }
 
   return (
     <>
+      
       <div className={styles.products}>
         {displayedProducts.map((product) => (
           <Product {...product} key={product.id} />
@@ -44,9 +56,19 @@ function Store() {
         {Array(Math.ceil(products.length / 5))
           .fill()
           .map((e, i) => (
-            <Pagination page={i + 1} onPagination={handlePagination} key={i} currentPage={currentPage}/>
+            <Pagination
+              page={i + 1}
+              onPagination={handlePagination}
+              key={i}
+              currentPage={currentPage}
+            />
           ))}
       </div>
+      {/* <div className="sort">
+        <p onClick={() => sortProducts("price")}>price</p>
+        <p onClick={() => sortProducts("rating")}>rating</p>
+      </div> */}
+
     </>
   );
 }
