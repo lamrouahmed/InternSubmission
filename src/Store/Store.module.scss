@@ -1,4 +1,13 @@
 .products {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.paginationContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
