@@ -1,12 +1,19 @@
-import styles from "./Pagination.module.scss"
+import styles from "./Pagination.module.scss";
 
-function Pagination({ page, onPagination, currentPage}) {
+function Pagination({ onPagination, currentPage, size }) {
   return (
-    <div
-      className={`${styles.paginationItem} ${currentPage === page && styles.paginationItemSelected}`}
-      onClick={() => onPagination(page)}
-    >
-      {page}
+    <div className={styles.paginationContainer}>
+      {Array(size)
+        .fill()
+        .map((e, i) => (
+          <div
+            className={`${styles.paginationItem} ${
+              currentPage === i + 1 && styles.paginationItemSelected
+            }`}
+            onClick={() => onPagination(i + 1)}
+            key={i}
+          >{i+1}</div>
+        ))}
     </div>
   );
 }

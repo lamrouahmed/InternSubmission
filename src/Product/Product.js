@@ -27,7 +27,10 @@ function Product({
             {Array(5)
               .fill()
               .map((e, i) => (
-                <Star key={i} className={ i < Math.floor(rate) ? styles.filled : '' } />
+                <Star
+                  key={i}
+                  className={i < Math.floor(rate) ? styles.filled : ""}
+                />
               ))}
           </div>
           <div className={styles.count}>
