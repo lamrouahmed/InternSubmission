@@ -17,7 +17,7 @@ function Product({
         <div className={styles.productDetail}>
           <div className={styles.title}>{title}</div>
           <div className={styles.description}>
-            {description.slice(0, 30)}...
+            {description.slice(0, 40)}...
           </div>
         </div>
         <div className={styles.category}>{category}</div>

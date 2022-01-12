@@ -1,0 +1,17 @@
+.categoriesContainer {
+
+    & > select {
+        display: block;
+        background-color: #FFF;
+        border: none;
+        border-radius: 4px;
+        padding: 14px 44px 14px 14px;
+        font-weight: 400;
+        box-shadow: 1px 1px 1px 1px #eaeaf0;    
+        & > option {
+            color: rgb(83, 83, 83);
+        }
+    }
+
+    
+}

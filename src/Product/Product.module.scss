@@ -1,19 +1,20 @@
 .product {
     background-color: #FFF;
-    margin: 1rem;
+    margin: .5rem 0;
     display: flex;
     align-items: center;
     justify-content: space-around;
     font-weight: 600;
     height: 5rem;
-    width: 70%;
+    width: 100%;
     border-radius: 10px;
 
-    & > div {
-        flex-grow: 0;
-        flex-shrink: 0;
-        flex-basis: 4rem;
-    }
+    // & > div {
+    //     // flex-grow: 0;
+    //     // flex-shrink: 0;
+    //     // flex-basis: 4rem;
+    //     color: red;
+    // }
     
     .img {
         width: 4rem;
@@ -27,7 +28,10 @@
 
     .productDetail {
 
-        
+        width: 30rem;
+        max-width: 30rem;
+        white-space: nowrap;
+        overflow: hidden;
         .title {
             font-size: 1rem;
         }
@@ -59,7 +63,7 @@
 
     .stars {
         display: flex;
-
+        margin-right: .5rem;
         & > svg {
             width: .9rem;
             height: .9rem;
